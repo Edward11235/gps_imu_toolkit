@@ -5,10 +5,11 @@ from sensor_msgs.msg import Imu, NavSatFix
 from std_msgs.msg import Float32MultiArray
 from tf.transformations import euler_from_quaternion
 import geodesy.utm
+import math
 
 IMU_TOPIC = '/imu/data'
-# GPS_TOPIC = '/gps/fix'
-GPS_TOPIC = '/navsat/fix'
+GPS_TOPIC = '/gps/fix'
+# GPS_TOPIC = '/navsat/fix'
 STATE_TOPIC = '/state'
 
 class HeadingAndCoordinates:
@@ -30,7 +31,8 @@ class HeadingAndCoordinates:
         orientation_q = data.orientation
         orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
         (roll, pitch, yaw) = euler_from_quaternion(orientation_list)
-        self.heading = yaw  # Yaw is the heading in radians
+        yaw = yaw % (2 * math.pi)
+        self.heading = yaw   # Yaw is the heading in radians
 
     def gps_callback(self, data):
         current_utm = geodesy.utm.fromLatLong(data.latitude, data.longitude).toPoint()
