@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(imu_and_gps_toolkit)
+project(gps_imu_toolkit)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -106,7 +106,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES imu_and_gps_toolkit
+#  LIBRARIES gps_imu_toolkit
 #  CATKIN_DEPENDS geodesy rospy sensor_msgs std_msgs tf
 #  DEPENDS system_lib
 )
@@ -124,7 +124,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/imu_and_gps_toolkit.cpp
+#   src/${PROJECT_NAME}/gps_imu_toolkit.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -135,7 +135,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/imu_and_gps_toolkit_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/gps_imu_toolkit_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -198,7 +198,7 @@ catkin_install_python(PROGRAMS src/heading_and_coordinates.py
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_imu_and_gps_toolkit.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_gps_imu_toolkit.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

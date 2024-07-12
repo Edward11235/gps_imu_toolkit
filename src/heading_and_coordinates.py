@@ -7,7 +7,8 @@ from tf.transformations import euler_from_quaternion
 import geodesy.utm
 
 IMU_TOPIC = '/imu/data'
-GPS_TOPIC = '/gps/fix'
+# GPS_TOPIC = '/gps/fix'
+GPS_TOPIC = '/navsat/fix'
 STATE_TOPIC = '/state'
 
 class HeadingAndCoordinates:
