@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="gx5_to_base_link" args="0 0 0 0 0 0 gx5_link base_link" />
+
+  <!-- Run the EKF Localization node -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+        <rosparam command="load" file="$(find imu_and_gps_toolkit)/params/fuse_imu_and_odom.yaml"/>
+  </node>
+</launch>
