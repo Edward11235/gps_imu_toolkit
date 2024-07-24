@@ -9,7 +9,7 @@ odom_frame: odom            # Defaults to "odom" if unspecified
 base_link_frame: base_link  # Defaults to "base_link" if unspecified
 world_frame: odom           # Defaults to the value of odom_frame if unspecified
 
-odom0: /lio_sam/mapping/odometry
+odom0: /odom
 odom0_config: [true,  true,  false,
                 true,  true,  true,
                 false, false, false,
@@ -17,7 +17,7 @@ odom0_config: [true,  true,  false,
                 false, false, false]
 odom0_differential: false
 
-imu0: /gx5/imu/data
+imu0: /imu
 imu0_config: [false, false, false,
               true,  true,  true,
               false, false, false,

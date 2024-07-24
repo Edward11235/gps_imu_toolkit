@@ -1,0 +1,20 @@
+<launch>
+    
+  <node pkg="tf2_ros" type="static_transform_publisher" name="basefootprint_to_base_link" args="0 0 0 0 0 0 base_footprint base_link" />
+
+  <!-- EKF GPS-->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_gps" respawn="true">
+      <remap from="odometry/filtered" to="odometry/navsat" />
+      <rosparam command="load" file="$(find gps_imu_toolkit)/params/config_for_turtlebot_gps_imu.yaml"/>
+  </node>
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true">
+      <rosparam command="load" file="$(find gps_imu_toolkit)/params/navsat_config.yaml" />
+      <!-- <rosparam param="datum">[42.360451545, -71.0925642517, 0.0, map, base_link]</rosparam> -->
+      <rosparam param="datum">[49.900031977948245, 8.899989268675899, 0.0, world, base_link]</rosparam>
+      <remap from="imu/data" to="/imu" />
+      <remap from="gps/fix" to="/fix" /> 
+      <remap from="odometry/filtered" to="odometry/navsat" />
+  </node>
+
+</launch>
