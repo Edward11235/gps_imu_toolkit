@@ -1,6 +1,7 @@
 <launch>
     
   <node pkg="tf2_ros" type="static_transform_publisher" name="basefootprint_to_base_link" args="0 0 0 0 0 0 base_footprint base_link" />
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_base_link" args="0 0 0 0 0 0 world base_link" /> -->
 
   <!-- EKF GPS-->
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_gps" respawn="true">
@@ -11,7 +12,7 @@
   <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true">
       <rosparam command="load" file="$(find gps_imu_toolkit)/params/navsat_config.yaml" />
       <!-- <rosparam param="datum">[42.360451545, -71.0925642517, 0.0, map, base_link]</rosparam> -->
-      <rosparam param="datum">[49.900031977948245, 8.899989268675899, 0.0, world, base_link]</rosparam>
+      <!-- <rosparam param="datum">[49.900031977948245, 8.899989268675899, 0.0, world, base_link]</rosparam> -->
       <remap from="imu/data" to="/imu" />
       <remap from="gps/fix" to="/fix" /> 
       <remap from="odometry/filtered" to="odometry/navsat" />
