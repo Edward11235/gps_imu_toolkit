@@ -1,9 +1,9 @@
-frequency: 100
-wait_for_datum: true
+frequency: 10
+wait_for_datum: false
 delay: 0.0
 magnetic_declination_radians: 0
 yaw_offset: 0
 zero_altitude: true
-broadcast_utm_transform: false
-broadcast_utm_transform_as_parent_frame: false
+broadcast_cartesian_transform: false
+broadcast_cartesian_transform_as_parent_frame: false
 publish_filtered_gps: false
