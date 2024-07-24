@@ -8,8 +8,8 @@ import geodesy.utm
 import math
 
 IMU_TOPIC = '/imu/data'
-GPS_TOPIC = '/gps/fix'
-# GPS_TOPIC = '/navsat/fix'
+# GPS_TOPIC = '/gps/fix'
+GPS_TOPIC = '/navsat/fix'
 STATE_TOPIC = '/state'
 
 class HeadingAndCoordinates:

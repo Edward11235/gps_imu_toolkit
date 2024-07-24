@@ -3,6 +3,6 @@
 
   <!-- Run the EKF Localization node -->
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
-        <rosparam command="load" file="$(find gps_imu_toolkit)/params/fuse_imu_and_odom.yaml"/>
+        <rosparam command="load" file="$(find gps_imu_toolkit)/params/config_for_turtlebot.yaml"/>
   </node>
 </launch>
