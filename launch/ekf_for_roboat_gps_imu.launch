@@ -1,7 +1,6 @@
 <launch>
-    
-  <node pkg="tf2_ros" type="static_transform_publisher" name="gps_transform" args="0 0 0 0 0 0 base_link gps" />
-  <node pkg="tf2_ros" type="static_transform_publisher" name="imu_transform" args="0 0 0 0 0 0 base_link imu_link" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="gps_transform" args="0 0 0.23 0 0 0 base_link gps" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="imu_transform" args="0.28 0 0 0 0 0 base_link gx5_link" />
   <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_baselink_transform" args="0 0 0 0 0 0 base_link odom" />
   <node pkg="tf2_ros" type="static_transform_publisher" name="baselink_to_odom_transform" args="0 0 0 0 0 0 odom base_link" />
 
