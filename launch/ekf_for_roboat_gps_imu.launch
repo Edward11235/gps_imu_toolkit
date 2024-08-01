@@ -15,7 +15,7 @@
       <rosparam command="load" file="$(find gps_imu_toolkit)/params/navsat_config.yaml" />
       <!-- <remap from="imu/data" to="/imu/data" /> -->
       <remap from="gps/fix" to="/fix" /> 
-      <!-- <remap from="odometry/filtered" to="odometry/navsat" /> -->
+      <remap from="odometry/filtered" to="odometry/navsat" />
   </node>
 
 </launch>
